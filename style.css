@@ -1,0 +1,298 @@
+/* Layout Foundations & Styling Resets */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    padding: 30px;
+    min-height: 100vh;
+}
+
+.phase-dashboard {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Module Header Styles */
+.module-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #1e293b;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.module-header h2 {
+    color: #38bdf8;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.module-header p {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+/* Button UI Toolkit */
+.btn-primary {
+    background-color: #0284c7;
+    color: #fff;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover { background-color: #0369a1; }
+
+.btn-secondary {
+    background: transparent;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-right: 12px;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    border-color: #64748b;
+    background-color: #1e293b;
+}
+
+/* Metric Display Panels */
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 24px;
+}
+
+.card-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.metric-card h2 {
+    font-size: 2rem;
+    color: #f8fafc;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.progress-bar-container {
+    background-color: #1f2937;
+    height: 6px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #38bdf8;
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.4s ease;
+}
+
+.card-subtext { font-size: 0.85rem; color: #64748b; }
+.card-subtext.state-success { color: #10b981; }
+.card-subtext.state-warning { color: #f59e0b; }
+
+/* Dashboard Split Grid Modules Layout */
+.panel-layout {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 25px;
+}
+
+@media (max-width: 1024px) {
+    .panel-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.data-panel {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 24px;
+    min-height: 450px;
+}
+
+.panel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #1f2937;
+    padding-bottom: 12px;
+}
+
+.panel-title h3 {
+    font-size: 1rem;
+    color: #94a3b8;
+}
+
+.status-indicator-legend {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 4px;
+}
+.dot.active { background-color: #10b981; }
+.dot.pending { background-color: #64748b; }
+
+/* Interactive Phase Node Grid Pattern */
+.phase-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.phase-node {
+    background-color: #0f172a;
+    border: 1px solid #1f2937;
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.phase-node:hover {
+    border-color: #38bdf8;
+    background-color: #1e293b;
+}
+
+.phase-node.active-module {
+    border-color: rgba(16, 185, 129, 0.4);
+    background-color: rgba(16, 185, 129, 0.03);
+}
+
+.phase-node.active-module:hover {
+    border-color: #10b981;
+}
+
+.phase-node.selected-node {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+.node-code {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.phase-node.active-module .node-code {
+    color: #10b981;
+}
+
+.node-title {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+/* Information Display Inspector Box */
+.inspector-card {
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-state {
+    text-align: center;
+    color: #64748b;
+    font-size: 0.85rem;
+    margin: auto 0;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+.inspector-details h4 {
+    color: #38bdf8;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.inspector-subtitle {
+    font-size: 0.8rem;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.meta-group {
+    margin-bottom: 16px;
+}
+
+.meta-group label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.meta-group p {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+}
+
+.status-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.status-tag.active { background-color: rgba(16, 185, 129, 0.15); color: #10b981; }
+.status-tag.pending { background-color: rgba(100, 116, 139, 0.15); color: #94a3b8; }
+
+.log-terminal {
+    background-color: #0f172a;
+    border: 1px solid #1f2937;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #10b981;
+    overflow-y: auto;
+    height: 140px;
+    margin-top: 10px;
+}

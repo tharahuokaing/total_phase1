@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HT Banking System - Phase Deployment Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phase-dashboard">
+        <!-- Dashboard Top Header Area -->
+        <header class="module-header">
+            <div class="title-area">
+                <h2>SYSTEM CORE DEPLOYMENT ROADMAP</h2>
+                <p>Huokaing Thara Banking System • Modular Stage Controller</p>
+            </div>
+            <div class="action-buttons">
+                <button id="validateRegistryBtn" class="btn-secondary">Validate Integrity</button>
+                <button id="initializeAllBtn" class="btn-primary">Boot Next Phase</button>
+            </div>
+        </header>
+
+        <!-- Dynamic Status Metrics Row -->
+        <section class="metrics-row">
+            <div class="metric-card">
+                <span class="card-label">Total Orchestrated Stages</span>
+                <h2 id="totalPhasesCount">18</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="completionProgressBar" style="width: 0%;"></div>
+                </div>
+                <p class="card-subtext" id="progressPctText">Calculating deployment status...</p>
+            </div>
+            
+            <div class="metric-card">
+                <span class="card-label">Active Modules</span>
+                <h2 id="activePhasesCount">0</h2>
+                <p class="card-subtext state-success">● Operating nominally</p>
+            </div>
+
+            <div class="metric-card">
+                <span class="card-label">Pending Initialization</span>
+                <h2 id="pendingPhasesCount">0</h2>
+                <p class="card-subtext state-warning"> Gated behind sequence order</p>
+            </div>
+        </section>
+
+        <!-- Secondary Operational Breakdowns -->
+        <div class="panel-layout">
+            
+            <!-- Phase Matrix Grid View -->
+            <section class="data-panel phase-matrix-section">
+                <div class="panel-title">
+                    <h3>System Architecture Registry</h3>
+                    <span class="status-indicator-legend">
+                        <span class="dot active"></span> Active 
+                        <span class="dot pending"></span> Pending
+                    </span>
+                </div>
+                
+                <div class="phase-matrix-grid" id="phaseGridContainer">
+                    <!-- Loaded dynamically via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Inspector Panel Side View -->
+            <section class="data-panel inspector-section">
+                <div class="panel-title">
+                    <h3>Module Inspector</h3>
+                </div>
+                <div class="inspector-card" id="inspectorCardView">
+                    <div class="empty-state">
+                        <p>Select any architecture node from the matrix map to inspect environment context details, lifecycle tracking status, and telemetry execution logs.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="total_phase.js"></script>
+</body>
+</html>
